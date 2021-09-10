@@ -1,0 +1,15 @@
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\VennerBekendte.exe.config
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\VennerBekendte.exe
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\VennerBekendte.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\MainWindow.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\App.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte_MarkupCompile.cache
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte_MarkupCompile.lref
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\MainWindow.baml
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.g.resources
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.Properties.Resources.resources
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csproj.GenerateResource.cache
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csproj.CoreCompileInputs.cache
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.exe
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.pdb
