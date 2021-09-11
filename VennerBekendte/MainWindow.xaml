@@ -6,10 +6,67 @@
         xmlns:local="clr-namespace:VennerBekendte"
         mc:Ignorable="d"
         Title="VennerBekendte" Height="750" Width="1150" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#EAB01E"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#EAB01E"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#f1ca68"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#f1ca68"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Label x:Name="FriendsLabel" Content="Venner" HorizontalAlignment="Left" Height="53" Margin="40,28,0,0" VerticalAlignment="Top" Width="281"/>
+        <Label x:Name="FriendsLabel" Content="Friends" HorizontalAlignment="Left" Height="53" Margin="40,32,0,0" VerticalAlignment="Top" Width="281" FontSize="30" FontFamily="Ink Free"/>
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="22" Margin="40,86,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
-        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Height="22" Margin="260,86,0,0" VerticalAlignment="Top" Width="61" Click="SearchButton_Click"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Height="22" Margin="260,86,0,0"  Padding="2" VerticalAlignment="Top" Width="61" Click="SearchButton_Click" Style="{DynamicResource RoundedButtonStyle}"/>
         <ListView HorizontalAlignment="Left" Height="543" Margin="40,131,0,0" VerticalAlignment="Top" Width="281">
             <ListView.View>
                 <GridView>
@@ -17,10 +74,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Height="24" Margin="698,131,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="AgeLabel" Content="Age:" HorizontalAlignment="Left" Height="24" Margin="698,182,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="EmailLabel" Content="Email:" HorizontalAlignment="Left" Height="24" Margin="698,227,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="MobileLabel" Content="Mobile Number:" HorizontalAlignment="Left" Height="24" Margin="698,278,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Height="24" Margin="698,131,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="AgeLabel" Content="Age:" HorizontalAlignment="Left" Height="24" Margin="698,182,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="EmailLabel" Content="Email:" HorizontalAlignment="Left" Height="24" Margin="698,227,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="MobileLabel" Content="Mobile Number:" HorizontalAlignment="Left" Height="24" Margin="698,278,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" FontFamily="Ink Free">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,10 +87,10 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="FacebookLabel" Content="Facebook:" HorizontalAlignment="Left" Height="24" Margin="698,321,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="LinkedinLabel" Content="Linkedin:" HorizontalAlignment="Left" Height="24" Margin="698,372,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="HistoryLabel" Content="History" HorizontalAlignment="Left" Height="24" Margin="698,430,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="InterestsLabel" Content="Interests:" HorizontalAlignment="Left" Height="24" Margin="698,468,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="FacebookLabel" Content="Facebook:" HorizontalAlignment="Left" Height="24" Margin="698,321,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="LinkedinLabel" Content="Linkedin:" HorizontalAlignment="Left" Height="24" Margin="698,372,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="HistoryLabel" Content="History" HorizontalAlignment="Left" Height="24" Margin="698,430,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
+        <Label x:Name="InterestsLabel" Content="Interests:" HorizontalAlignment="Left" Height="24" Margin="698,468,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
         <Menu Height="23" Margin="2,0,0,0" VerticalAlignment="Top">
             <MenuItem x:Name="CreateFriendMenu" Header="_Add New Friend" Height="23" Width="109" Click="CreateFriend_Click">
 
@@ -47,15 +104,15 @@
                 <MenuItem x:Name="LogOut" Header="_Log Out" />
             </MenuItem>
         </Menu>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,231,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,329,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,383,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,433,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <TextBox HorizontalAlignment="Left" Height="133" Margin="838,471,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0"/>
-        <Button x:Name="ImportButton" Content="Import Friends" HorizontalAlignment="Left" Height="36" Margin="698,568,0,0" VerticalAlignment="Top" Width="96" Click="ImportButton_Click"/>
-        <Button x:Name="ExportButton" Content="Export Friends" HorizontalAlignment="Left" Height="36" Margin="814,568,0,0" VerticalAlignment="Top" Width="96" Click="ExportButton_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,231,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,329,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,383,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="838,433,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <TextBox HorizontalAlignment="Left" Height="133" Margin="838,471,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
+        <Button x:Name="ImportButton" Content="Import Friends" HorizontalAlignment="Left" Height="36" Margin="698,568,0,0" VerticalAlignment="Top" Width="96" Click="ImportButton_Click" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Ink Free"/>
+        <Button x:Name="ExportButton" Content="Export Friends" HorizontalAlignment="Left" Height="36" Margin="814,568,0,0" VerticalAlignment="Top" Width="96" Click="ExportButton_Click" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Ink Free"/>
     </Grid>
 </Window>

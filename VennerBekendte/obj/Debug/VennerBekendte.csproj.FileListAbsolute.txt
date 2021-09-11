@@ -13,3 +13,14 @@ C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekend
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csproj.CoreCompileInputs.cache
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.exe
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\LoginView.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\Window1.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\LoginView.baml
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\Window1.baml
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\MaterialDesignColors.dll
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csproj.CopyComplete
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\App.baml
