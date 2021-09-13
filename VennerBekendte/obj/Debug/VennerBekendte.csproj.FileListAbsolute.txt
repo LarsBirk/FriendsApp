@@ -21,4 +21,6 @@ C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\StartVi
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\StartView.baml
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\MainWindow.g.cs
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\MainWindow.baml
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\CreateUserView.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\CreateUserView.baml
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache

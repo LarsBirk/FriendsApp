@@ -13,40 +13,50 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using VennerBekendte.View;
 
-namespace VennerBekendte
+namespace VennerBekendte.View
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for CreateUserView.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class CreateUserView : Window
     {
-        public Window1()
+        public CreateUserView()
         {
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 window1 = new Window1();
+            window1.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;");
             try
             {
-                if (sqlCon.State == ConnectionState.Closed);
+                if (sqlCon.State == ConnectionState.Closed) ;
                 {
                     sqlCon.Open();
                 }
-                string query = "SELECT COUNT(1) FROM users WHERE Username=@Username AND Password=@Password";
+                string query = "INSERT INTO users VALUES ('" +
+                    UsernameInput.Text + "', '" +                    
+                    ConfirmedPasswordInput.Password + "'')";
+
+
+
+
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Username", UsernameInput.Text);
-                sqlCmd.Parameters.AddWithValue("@Password", PasswordInput.Password);
+                sqlCmd.ExecuteNonQuery();
+               
+
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    this.Close();
+                    MessageBox.Show("Profile has been saved");
                 }
                 else
                 {
@@ -63,14 +73,6 @@ namespace VennerBekendte
             {
                 sqlCon.Close();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            CreateUserView createUserView = new CreateUserView();
-            createUserView.Show();
-            this.Close();
-
         }
     }
 }
