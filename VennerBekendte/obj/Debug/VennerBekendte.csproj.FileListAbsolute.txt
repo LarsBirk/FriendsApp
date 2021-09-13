@@ -13,3 +13,4 @@ C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekend
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csproj.CoreCompileInputs.cache
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.exe
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\LoginView.g.cs
