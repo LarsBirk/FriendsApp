@@ -35,44 +35,85 @@ namespace VennerBekendte.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;");
-            try
+            using (SqlConnection connection = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
+
             {
-                if (sqlCon.State == ConnectionState.Closed) ;
+                String query = "INSERT INTO users (username,password) VALUES (@username,@password)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    sqlCon.Open();
-                }
-                string query = "INSERT INTO users VALUES ('" +
-                    UsernameInput.Text + "', '" +                    
-                    ConfirmedPasswordInput.Password + "'')";
 
+                    
+                    command.Parameters.AddWithValue("@username", UsernameInput.Text);
+                    command.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
+                    
 
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
 
-
-                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.ExecuteNonQuery();
-               
-
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
-                {
-                    MessageBox.Show("Profile has been saved");
-                }
-                else
-                {
-                    MessageBox.Show("Username or Password is incorrect");
+                    // Check Error
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Profile Has Been Saved");
+                        Window1 window = new Window1();
+                        window.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Profile Has NOT Been Saved");
+                    }
+                       
                 }
 
             }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlCon.Close();
-            }
+
+
+
+
+
+
+
+
+
+
+            //SqlConnection sqlCon = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;");
+            //try
+            //{
+            //    if (sqlCon.State == ConnectionState.Closed) ;
+            //    {
+            //        sqlCon.Open();
+            //    }
+
+            //    string query = "INSERT into users (username,password) " +
+            //        " VALUES ('" + UsernameInput.Text + "', '" + PasswordInput.Password + "');";
+
+            //    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+            //    sqlCmd.ExecuteNonQuery();
+
+            //    sqlCmd.Parameters.AddWithValue("@Username", UsernameInput.Text);
+            //    sqlCmd.Parameters.AddWithValue("@Password", ConfirmedPasswordInput.Password);
+            //    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+            //    if (count == 1)
+            //    {
+            //        MessageBox.Show("Profile has been saved");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Username or Password is incorrect");
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    sqlCon.Close();
+            //}
         }
     }
 }
