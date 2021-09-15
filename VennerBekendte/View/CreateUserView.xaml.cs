@@ -32,41 +32,83 @@ namespace VennerBekendte.View
             window1.Show();
             this.Close();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
-
             {
-                String query = "INSERT INTO users (username,password) VALUES (@username,@password)";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand("spUserExistCheck", connection))
                 {
 
-                    
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@username", UsernameInput.Text);
-                    command.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
-                    
 
                     connection.Open();
-                    int result = command.ExecuteNonQuery();
+                    int status = Convert.ToInt32(command.ExecuteScalar());
 
-                    // Check Error
-                    if (result == 1)
+                    if (status == 1)
                     {
-                        MessageBox.Show("Profile Has Been Saved");
-                        Window1 window = new Window1();
-                        window.Show();
-                        this.Close();
+                        MessageBox.Show("Username already Exist");
                     }
                     else
                     {
-                        MessageBox.Show("Profile Has NOT Been Saved");
-                    }
-                       
-                }
+                        using (SqlConnection connection2 = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
+                        {
 
+                            using (SqlCommand cmdCreate = new SqlCommand("spCreateNewUser", connection2))
+                            {
+                                cmdCreate.CommandType = CommandType.StoredProcedure;
+                                cmdCreate.Parameters.AddWithValue("@username", UsernameInput.Text);
+                                cmdCreate.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
+
+                                connection2.Open();
+                                int result = cmdCreate.ExecuteNonQuery(); // skal være her ellers udføres creation ikke.
+
+                                MessageBox.Show("User created!");
+                                Window1 window = new Window1();
+                                window.Show();
+                                this.Close();
+                            }
+                        }
+                    }
+
+                }
+                connection.Close();
             }
+            
+            //private void Button_Click(object sender, RoutedEventArgs e)
+            //{
+            //    using (SqlConnection connection = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
+
+            //    {
+            //        String query = "INSERT INTO users (username,password) VALUES (@username,@password)";
+
+            //        using (SqlCommand command = new SqlCommand(query, connection))
+            //        {
+
+
+            //            command.Parameters.AddWithValue("@username", UsernameInput.Text);
+            //            command.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
+
+
+            //            connection.Open();
+            //            int result = command.ExecuteNonQuery();
+
+            //            // Check Error
+            //            if (result == 1)
+            //            {
+            //                MessageBox.Show("Profile Has Been Saved");
+            //                Window1 window = new Window1();
+            //                window.Show();
+            //                this.Close();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Profile Has NOT Been Saved");
+            //            }
+
+            //        }
+
+            //    }
 
 
 
