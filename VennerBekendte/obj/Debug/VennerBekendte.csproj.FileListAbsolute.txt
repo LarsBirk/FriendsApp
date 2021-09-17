@@ -51,3 +51,6 @@ G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.pdb
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\ProfileInfoView.g.cs
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\ProfileInfoView.baml
+G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache
+G:\Repos\FriendsApp\VennerBekendte\obj\Debug\View\ProfileInfoView.g.cs
+G:\Repos\FriendsApp\VennerBekendte\obj\Debug\View\ProfileInfoView.baml

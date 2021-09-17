@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,6 +86,43 @@ namespace VennerBekendte.View
         private void DeleteAllItems_Click(object sender, RoutedEventArgs e)
         {
             ProfileInterestsListView.Items.Clear();
+        }
+        public void UpdateUserProfile()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var item in ProfileInterestsListView.Items)
+            //for(int i = 0; i < ProfileInterestsListView.Items.Count; i++)
+            {
+                    sb.Append( item.ToString()+", ");
+            }
+            String test = sb.ToString();
+            using (SqlConnection connection = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
+            {
+                using (SqlCommand command = new SqlCommand("spUpdateUser", connection))
+                {
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@username", "Henrik"); //skal læse current user
+                    command.Parameters.AddWithValue("@profilename", NameInput.Text);
+                    command.Parameters.AddWithValue("@dob", DobInput.Text);
+                    command.Parameters.AddWithValue("@email", EmailInput.Text);
+                    command.Parameters.AddWithValue("@phonenumber", PhonenumberInput.Text);
+                    command.Parameters.AddWithValue("@facebook", FacebookInput.Text);
+                    command.Parameters.AddWithValue("@linkedin", LinkedinInput.Text);
+                    command.Parameters.AddWithValue("@interests", test); // skal hente fra listview
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                   
+                    MessageBox.Show("User has been updated");
+                    
+                }
+            }
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UpdateUserProfile();
+            
         }
     }
 }

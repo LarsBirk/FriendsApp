@@ -21,7 +21,7 @@
         </Menu>
         <TextBlock x:Name="ProfileLabel" Text="Profile Info" HorizontalAlignment="Left" Height="53" Margin="40,56,0,0" VerticalAlignment="Top" Width="178" FontSize="30" FontFamily="Ink Free" />
         <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Height="30" Margin="40,175,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <TextBox HorizontalAlignment="Left" Height="17" Margin="42,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <TextBox x:Name="NameInput" HorizontalAlignment="Left" Height="17" Margin="42,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <ListView x:Name="ProfileInterestsListView"  BorderBrush="LightGray" HorizontalAlignment="Left" Height="330" Margin="592,174,0,0" VerticalAlignment="Top" Width="205" SelectionChanged="ProfileInterestsListView_SelectionChanged" FontFamily="Ink Free" FontSize="15">
             <ListView.View>                
                 <GridView ColumnHeaderStringFormat="#">
@@ -33,22 +33,22 @@
             </ListView.View>
         </ListView>
         <Label x:Name="ProfileLabel_Copy" Content="Your Interests" HorizontalAlignment="Left" Height="53" Margin="592,56,0,0" VerticalAlignment="Top" Width="216" FontSize="30" FontFamily="Ink Free"/>
-        <Button Content="Save Information" Padding ="5" HorizontalAlignment="Left" Height="30" Margin="426,669,0,0" VerticalAlignment="Top" Width="107" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free"/>
+        <Button Content="Save Information" Padding ="5" HorizontalAlignment="Left" Height="30" Margin="426,669,0,0" VerticalAlignment="Top" Width="107" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free" Click="Button_Click_1"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,219,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="DateOfBirthLabel" Content="Date of birth:" HorizontalAlignment="Left" Height="30" Margin="40,250,0,0" VerticalAlignment="Top" Width="116" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <DatePicker HorizontalAlignment="Left" Height="19" Margin="42,280,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <DatePicker x:Name="DobInput" HorizontalAlignment="Left" Height="19" Margin="42,280,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,295,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="NameLabel_Copy1" Content="Email:" HorizontalAlignment="Left" Height="30" Margin="40,325,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <TextBox HorizontalAlignment="Left" Height="17" Margin="42,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Height="17" Margin="42,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,369,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="NameLabel_Copy2" Content="Mobile Number:" HorizontalAlignment="Left" Height="30" Margin="40,400,0,0" VerticalAlignment="Top" Width="128" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <TextBox x:Name="PhonenumberInput" HorizontalAlignment="Left" Height="17" Margin="41,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,444,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="NameLabel_Copy3" Content="Facebook:" HorizontalAlignment="Left" Height="30" Margin="40,475,0,0" VerticalAlignment="Top" Width="96" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <TextBox x:Name="FacebookInput" HorizontalAlignment="Left" Height="17" Margin="41,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,519,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="NameLabel_Copy4" Content="Linkedin:" HorizontalAlignment="Left" Height="30" Margin="40,550,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
-        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <TextBox x:Name="LinkedinInput" HorizontalAlignment="Left" Height="17" Margin="41,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
         <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,594,0,0" VerticalAlignment="Top" Width="178"/>
         <Label x:Name="NameLabel_Copy5" Content="Interests:" HorizontalAlignment="Left" Height="30" Margin="40,625,0,0" VerticalAlignment="Top" Width="108" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
         <TextBox x:Name="InterestInput" HorizontalAlignment="Left" Height="17" Margin="41,656,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
