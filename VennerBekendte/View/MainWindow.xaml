@@ -77,16 +77,6 @@
         <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Height="24" Margin="698,131,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
         <Label x:Name="AgeLabel" Content="Age:" HorizontalAlignment="Left" Height="24" Margin="698,182,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
         <Label x:Name="EmailLabel" Content="Email:" HorizontalAlignment="Left" Height="24" Margin="698,227,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
-        <Label x:Name="MobileLabel" Content="Mobile Number:" HorizontalAlignment="Left" Height="24" Margin="698,278,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" FontFamily="Ink Free">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-1.019"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
         <Label x:Name="FacebookLabel" Content="Facebook:" HorizontalAlignment="Left" Height="24" Margin="698,321,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
         <Label x:Name="LinkedinLabel" Content="Linkedin:" HorizontalAlignment="Left" Height="24" Margin="698,372,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
         <Label x:Name="HistoryLabel" Content="History" HorizontalAlignment="Left" Height="24" Margin="698,430,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
@@ -114,5 +104,6 @@
         <TextBox HorizontalAlignment="Left" Height="133" Margin="838,471,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" BorderThickness="0" FontFamily="Ink Free"/>
         <Button x:Name="ImportButton" Content="Import Friends" HorizontalAlignment="Left" Height="36" Margin="698,568,0,0" VerticalAlignment="Top" Width="96" Click="ImportButton_Click" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Ink Free"/>
         <Button x:Name="ExportButton" Content="Export Friends" HorizontalAlignment="Left" Height="36" Margin="814,568,0,0" VerticalAlignment="Top" Width="96" Click="ExportButton_Click" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Ink Free"/>
+        <Label x:Name="MobileLabel" Content="Mobile Nr." HorizontalAlignment="Left" Height="24" Margin="698,281,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free"/>
     </Grid>
 </Window>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\App.xaml
-3658533897
+4-629002894
 
-8-1576125331
+9-155873068
 16-208608315
-View\CreateUserView.xaml;View\MainWindow.xaml;View\StartView.xaml;
+View\CreateUserView.xaml;View\MainWindow.xaml;View\ProfileInfoView.xaml;View\StartView.xaml;
 
-False
+True
 

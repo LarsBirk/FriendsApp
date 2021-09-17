@@ -1,0 +1,64 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VennerBekendte.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="VennerBekendte.View.ProfileInfoView"
+        mc:Ignorable="d"
+        Title="ProfileInfoView" Height="800" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu Height="23" Margin="2,0,0,0" VerticalAlignment="Top">
+            <MenuItem x:Name="CreateFriendMenu" Header="_Add New Friend" Height="23" Width="109" Click="CreateFriend_Click"/>
+            <MenuItem x:Name="UpdateFriendMenu" Header="_Update Friend" Height="23" Width="109" Click="UpdateFriend_Click"/>
+            <MenuItem x:Name="DeleteFriend" Header="_Delete Friend" Height="23" Width="109" Click="DeleteFriend_Click"/>
+            <MenuItem x:Name="UserSettings" Header="_User Settings" Click="UserSettings_Click">
+                <MenuItem x:Name="UserInfo" Header="_Show User Info" />
+                <MenuItem Header="_Export User" />
+                <Separator />
+                <MenuItem x:Name="LogOut" Header="_Log Out" />
+            </MenuItem>
+        </Menu>
+        <TextBlock x:Name="ProfileLabel" Text="Profile Info" HorizontalAlignment="Left" Height="53" Margin="40,56,0,0" VerticalAlignment="Top" Width="178" FontSize="30" FontFamily="Ink Free" />
+        <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Height="30" Margin="40,175,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox HorizontalAlignment="Left" Height="17" Margin="42,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <ListView x:Name="ProfileInterestsListView"  BorderBrush="LightGray" HorizontalAlignment="Left" Height="330" Margin="592,174,0,0" VerticalAlignment="Top" Width="205" SelectionChanged="ProfileInterestsListView_SelectionChanged" FontFamily="Ink Free" FontSize="15">
+            <ListView.View>                
+                <GridView ColumnHeaderStringFormat="#">
+                    <GridView.ColumnHeaderContextMenu>
+                        <ContextMenu/>
+                    </GridView.ColumnHeaderContextMenu>
+                    <GridViewColumn Header="Interest" Width="195" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="ProfileLabel_Copy" Content="Your Interests" HorizontalAlignment="Left" Height="53" Margin="592,56,0,0" VerticalAlignment="Top" Width="216" FontSize="30" FontFamily="Ink Free"/>
+        <Button Content="Save Information" Padding ="5" HorizontalAlignment="Left" Height="30" Margin="426,669,0,0" VerticalAlignment="Top" Width="107" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,219,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="DateOfBirthLabel" Content="Date of birth:" HorizontalAlignment="Left" Height="30" Margin="40,250,0,0" VerticalAlignment="Top" Width="116" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <DatePicker HorizontalAlignment="Left" Height="19" Margin="42,280,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,295,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="NameLabel_Copy1" Content="Email:" HorizontalAlignment="Left" Height="30" Margin="40,325,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox HorizontalAlignment="Left" Height="17" Margin="42,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,369,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="NameLabel_Copy2" Content="Mobile Number:" HorizontalAlignment="Left" Height="30" Margin="40,400,0,0" VerticalAlignment="Top" Width="128" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,444,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="NameLabel_Copy3" Content="Facebook:" HorizontalAlignment="Left" Height="30" Margin="40,475,0,0" VerticalAlignment="Top" Width="96" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,519,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="NameLabel_Copy4" Content="Linkedin:" HorizontalAlignment="Left" Height="30" Margin="40,550,0,0" VerticalAlignment="Top" Width="75" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox HorizontalAlignment="Left" Height="17" Margin="41,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,594,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label x:Name="NameLabel_Copy5" Content="Interests:" HorizontalAlignment="Left" Height="30" Margin="40,625,0,0" VerticalAlignment="Top" Width="108" FontFamily="Ink Free" FontSize="16" FontWeight="SemiBold"/>
+        <TextBox x:Name="InterestInput" HorizontalAlignment="Left" Height="17" Margin="41,656,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" BorderBrush="Gray" BorderThickness="0" FontFamily="Ink Free" FontSize="14"/>
+        <Separator Background="LightGray" HorizontalAlignment="Left" Height="9" Margin="40,669,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button x:Name="AddInterestButton" Content="Add to list" HorizontalAlignment="Left" Height="30" Margin="153,636,0,0" VerticalAlignment="Top" Width="53" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free" FontSize="10" Click="Button_Click"/>
+        <Button x:Name="DeleteOneItem" Content="Delete an Interests" HorizontalAlignment="Left" Height="25" Margin="836,307,0,0" VerticalAlignment="Top" Width="118" Click="DeleteOneItem_Click" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free"/>
+        <Button x:Name="DeleteAllItems" Content="Clear List" HorizontalAlignment="Left" Height="25" Margin="836,347,0,0" VerticalAlignment="Top" Width="118" Click="DeleteAllItems_Click" Style="{DynamicResource RoundButtonCorners}" FontFamily="Ink Free"/>
+        <Label x:Name="DeleteInterestErrorLabel" Content="You must select an interest" HorizontalAlignment="Left" Height="24" Margin="612,511,0,0" VerticalAlignment="Top" Width="175" FontFamily="Ink Free" Foreground="#FFF70D0D" FontWeight="SemiBold" FontSize="13" Visibility="Hidden"/>
+
+
+
+    </Grid>
+</Window>

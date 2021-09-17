@@ -23,7 +23,6 @@ C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\MainWin
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\MainWindow.baml
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\CreateUserView.g.cs
 C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\CreateUserView.baml
-C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache
 G:\Repos\FriendsApp\VennerBekendte\bin\Debug\VennerBekendte.exe.config
 G:\Repos\FriendsApp\VennerBekendte\bin\Debug\VennerBekendte.exe
 G:\Repos\FriendsApp\VennerBekendte\bin\Debug\VennerBekendte.pdb
@@ -49,3 +48,6 @@ G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.csproj.CoreCompileIn
 G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.csproj.CopyComplete
 G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.exe
 G:\Repos\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.pdb
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\VennerBekendte.csprojAssemblyReference.cache
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\ProfileInfoView.g.cs
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\View\ProfileInfoView.baml

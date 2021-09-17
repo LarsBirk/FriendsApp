@@ -2,8 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VennerBekendte"
-             StartupUri="View/StartView.xaml">
+             StartupUri="View/ProfileInfoView.xaml">
     <Application.Resources>
+        
+        
 
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -14,6 +16,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>

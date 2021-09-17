@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Repos\FriendsApp\VennerBekendte\obj\Debug\
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\obj\Debug\
 VennerBekendte
 none
 false
 DEBUG;TRACE
-G:\Repos\FriendsApp\VennerBekendte\App.xaml
-3658533897
+C:\Users\Lars_\source\repos\VennerBekendte\VennerBekendte\App.xaml
+4-629002894
 
-7-733765964
-16-1484444512
-View\CreateUserView.xaml;View\MainWindow.xaml;View\StartView.xaml;
+8686486299
+16-208608315
+View\CreateUserView.xaml;View\MainWindow.xaml;View\ProfileInfoView.xaml;View\StartView.xaml;
 
 False
 

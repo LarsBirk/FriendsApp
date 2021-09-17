@@ -38,7 +38,7 @@ namespace VennerBekendte.View
             {
                 using (SqlCommand command = new SqlCommand("spUserExistCheck", connection))
                 {
-
+                    
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@username", UsernameInput.Text);
 
@@ -51,26 +51,43 @@ namespace VennerBekendte.View
                     }
                     else
                     {
-                        using (SqlConnection connection2 = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
+                        if(PasswordInput.Password == ConfirmedPasswordInput.Password && UsernameInput.Text.Length > 0) 
                         {
-
-                            using (SqlCommand cmdCreate = new SqlCommand("spCreateNewUser", connection2))
+                            using (SqlConnection connection2 = new SqlConnection(@"Server=(local);Database=VennerBekendte;Trusted_Connection=Yes;"))
                             {
-                                cmdCreate.CommandType = CommandType.StoredProcedure;
-                                cmdCreate.Parameters.AddWithValue("@username", UsernameInput.Text);
-                                cmdCreate.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
 
-                                connection2.Open();
-                                int result = cmdCreate.ExecuteNonQuery(); // skal være her ellers udføres creation ikke.
+                                using (SqlCommand cmdCreate = new SqlCommand("spCreateNewUser", connection2))
+                                {
+                                    cmdCreate.CommandType = CommandType.StoredProcedure;
+                                    cmdCreate.Parameters.AddWithValue("@username", UsernameInput.Text);
+                                    cmdCreate.Parameters.AddWithValue("@password", ConfirmedPasswordInput.Password);
 
-                                MessageBox.Show("User created!");
-                                Window1 window = new Window1();
-                                window.Show();
-                                this.Close();
+                                    connection2.Open();
+                                    int result = cmdCreate.ExecuteNonQuery(); // skal være her ellers udføres creation ikke.
+
+                                    MessageBox.Show("User created!");
+                                    Window1 window = new Window1();
+                                    window.Show();
+                                    this.Close();
+                                }
                             }
                         }
+                        else if (UsernameInput.Text.Length < 1)
+                        {
+                            ValidationLabel.Visibility = Visibility.Visible;
+                            ValidationLabel.Content = "Username can not be empty";
+                            UsernameInputError.Visibility = Visibility.Visible;
+                            
+                        }
+                        else if(PasswordInput != ConfirmedPasswordInput && UsernameInput.Text.Length >= 1)
+                        {
+                            ValidationLabel.Visibility = Visibility.Visible;
+                            ValidationLabel.Content = "The two passwords does NOT match";
+                            PasswordInputError.Visibility = Visibility.Visible;
+                            ConfirmedPasswordInputError.Visibility = Visibility.Visible;
+                            UsernameInputError.Visibility = Visibility.Hidden;
+                        }                        
                     }
-
                 }
                 connection.Close();
             }
