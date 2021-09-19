@@ -28,13 +28,13 @@
             <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
             <StackPanel VerticalAlignment="Center" Margin="15">
                 <Label x:Name="UserNameLabel" Content="User Name:"  VerticalAlignment="Top" Foreground="Gray" FontSize="13" />
-                <TextBox x:Name="UsernameInput" materialDesign:HintAssist.Hint="EMAIL" FontFamily="Champagne &amp; Limousines" FontSize="18" BorderThickness="0,0,0,1"/>
+                <TextBox x:Name="UsernameInput" materialDesign:HintAssist.Hint="EMAIL" FontFamily="Champagne &amp; Limousines" FontSize="18" BorderThickness="0,0,0,1" TabIndex="0"/>
                 <Label x:Name="PasswordLabel" Content="Password:"  VerticalAlignment="Top" Foreground="Gray" FontSize="13" Margin="0,0,-0.4,0" />
-                <PasswordBox x:Name="PasswordInput"  materialDesign:HintAssist.Hint="SENHA"  FontFamily="Champagne &amp; Limousines" FontSize="18" BorderThickness="0,0,0,1" Margin="0,0,-0.4,0"/>
+                <PasswordBox x:Name="PasswordInput"  materialDesign:HintAssist.Hint="SENHA"  FontFamily="Champagne &amp; Limousines" FontSize="18" BorderThickness="0,0,0,1" Margin="0,0,-0.4,0" TabIndex="1"/>
             </StackPanel>
         </Grid>
-        <Button x:Name="LoginButton" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="LOGIN" Style="{DynamicResource RoundButtonCorners}" Click="LoginButton_Click"/>
+        <Button x:Name="LoginButton" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="LOGIN" Style="{DynamicResource RoundButtonCorners}" Click="LoginButton_Click" TabIndex="2"/>
         <Image Source="\Assests\home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
-        <Button Content="Create User" HorizontalAlignment="Left" Height="20" Foreground="Gray" Margin="125,454,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0" Background="{x:Null}" Click="Button_Click"/>
+        <Button Content="Create User" HorizontalAlignment="Left" Height="20" Foreground="Gray" Margin="125,454,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0" Background="{x:Null}" Click="Button_Click" TabIndex="3"/>
     </Grid>
 </Window>
