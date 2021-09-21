@@ -1,0 +1,10 @@
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\View.csproj.AssemblyReference.cache
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\View\CreateUserView.g.cs
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\View\MainWindow.g.cs
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\View\ProfileInfoView.g.cs
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\View\StartView.g.cs
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\App.g.cs
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte_MarkupCompile.cache
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte_MarkupCompile.lref
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.exe
+D:\repo\FriendsApp\VennerBekendte\obj\Debug\VennerBekendte.pdb

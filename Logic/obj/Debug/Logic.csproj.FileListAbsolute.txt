@@ -1,0 +1,2 @@
+D:\repo\FriendsApp\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+D:\repo\FriendsApp\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
